@@ -1,0 +1,13 @@
+{
+  "name": "simple-web-app",
+  "version": "1.0.0",
+  "description": "CI/CD Lernprojekt",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "lint": "npx htmlhint index.html",
+    "test": "echo 'Tests laufen...' && exit 0"
+  },
+  "keywords": ["cicd", "learning"],
+  "author": "Dein Name",
+  "license": "MIT"
+}
