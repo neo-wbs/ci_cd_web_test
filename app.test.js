@@ -1,4 +1,8 @@
-const { getRandomMessage, validateEmail, formatVersion, messages } = require('./app');
+// app.test.js – Jest Unit-Tests (CommonJS)
+// ============================================================
+// Importiert aus app.cjs (CommonJS), NICHT aus app.js (ES Module),
+// weil Jest standardmäßig require() nutzt und ESM-Syntax nicht versteht.
+const { getRandomMessage, validateEmail, formatVersion, messages } = require('./app.cjs');
 
 // ── Unit-Tests: getRandomMessage ──────────────────────────────────────────
 describe('getRandomMessage()', () => {
