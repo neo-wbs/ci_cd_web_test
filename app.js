@@ -1,5 +1,3 @@
-const broken = 
-
 const messages = [
     'Pipeline läuft erfolgreich! ✅',
     'Tests bestanden! 🧪',
