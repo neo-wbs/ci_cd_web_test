@@ -5,8 +5,8 @@ node_modules/
 dist/
 
 # Lokale Umgebungsvariablen (nie einchecken!)
-.env.production
-.env
+.env.local
+.env.*.local
 
 # Coverage-Reports
 coverage/
