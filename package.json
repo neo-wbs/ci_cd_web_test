@@ -3,11 +3,24 @@
   "version": "1.0.0",
   "description": "CI/CD Lernprojekt",
   "scripts": {
-    "start": "npx http-server . -p 3000 -o",
-    "lint": "npx htmlhint index.html",
-    "test": "echo 'Tests laufen...' && exit 0"
+    "lint:js": "eslint app.js",
+    "lint:html": "htmlhint index.html",
+    "lint": "npm run lint:js && npm run lint:html",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "start": "npx http-server . -p 3000 -o"
   },
-  "keywords": ["cicd", "learning"],
+  "keywords": [
+    "cicd",
+    "learning"
+  ],
   "author": "Dein Name",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.0",
+    "globals": "^17.4.0",
+    "htmlhint": "^1.9.2",
+    "jest": "^30.3.0"
+  }
 }
