@@ -5,12 +5,24 @@ body {
     background: linear-gradient(135deg, #1e3a5f, #2563eb);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
 }
 
 .container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    max-width: 500px;
+    width: 90%;
+}
+
+footer {
+    margin-top: 2rem; opacity: 0.6; font-size: 0.8rem;
     text-align: center;
     padding: 2rem;
     background: rgba(255,255,255,0.1);
