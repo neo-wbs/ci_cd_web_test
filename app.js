@@ -47,9 +47,6 @@ export function formatVersion(major, minor, patch) {
     return `v${major}.${minor}.${patch}`;
 }
 
-// Exportiert für externe Nutzung (z.B. andere Module im Projekt)
-export { getRandomMessage, messages };
-
 // DOM-Setup: Wird ausgeführt, sobald das HTML vollständig geladen ist.
 // Event Listener MÜSSEN hier registriert werden – onclick="..." im HTML
 // funktioniert mit type="module" NICHT (Funktionen sind nicht global).
@@ -63,3 +60,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('status-btn');
     if (btn) btn.addEventListener('click', updateStatus);
 });
+
+// Strukturiertes Logging
+function log(level, message, data = {}) {
+  const entry = {
+    timestamp: new Date().toISOString(),
+    level,
+    message,
+    service: 'simple-web-app',
+    version: typeof import.meta !== 'undefined' && import.meta.env
+      ? import.meta.env.VITE_APP_VERSION || '1.0.0'
+      : '1.0.0',
+    ...data
+  };
+  // Im Browser: strukturiert loggen
+  if (level === 'error') {
+    console.error(JSON.stringify(entry));
+  } else {
+    console.log(JSON.stringify(entry));
+  }
+  return entry;
+}
+
+// Exportiert für externe Nutzung (z.B. andere Module im Projekt)
+if (typeof module !== 'undefined') {
+  module.exports = { getRandomMessage, validateEmail, formatVersion, messages, log };
+}
