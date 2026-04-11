@@ -138,4 +138,5 @@ jobs:
     environment: production    # <- Wartet auf manuellen Approval!
 
     steps:
-      - run: echo "Production deployment approved and running!"  
+      - run: echo "Production deployment approved and running!"
+      # Hier echte Deployment-Steps einfügen  
