@@ -7,6 +7,10 @@ on:
   pull_request:
     branches: [ main ]
 
+# Globale Permissions: so wenig wie möglich
+permissions:
+  contents: read
+
 jobs:
   # ── Job 1: Lint & Test ─────────────────────────────────────────────────────
   lint-and-test:
@@ -65,6 +69,14 @@ jobs:
         run: npm audit --audit-level=high
         # Schlägt fehl bei HIGH oder CRITICAL Schwachstellen
         # Für weniger strenge Prüfung: --audit-level=critical
+
+      - name: API aufrufen (Beispiel)
+        env:
+          API_KEY: ${{ secrets.CICD_TEST_KEY }}
+        run: |
+          # Secret ist als Umgebungsvariable verfügbar
+          # GitHub maskiert den Wert automatisch in Logs
+          echo "Key ist gesetzt: ${{ secrets.CICD_TEST_KEY != '' }}"
 
   # ── Job 2: Build ───────────────────────────────────────────────────────────
   build:
