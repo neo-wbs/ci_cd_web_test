@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Strukturiertes Logging
-function log(level, message, data = {}) {
+export function log(level, message, data = {}) {
   const entry = {
     timestamp: new Date().toISOString(),
     level,
@@ -80,9 +80,4 @@ function log(level, message, data = {}) {
     console.log(JSON.stringify(entry));
   }
   return entry;
-}
-
-// Exportiert für externe Nutzung (z.B. andere Module im Projekt)
-if (typeof module !== 'undefined') {
-  module.exports = { getRandomMessage, validateEmail, formatVersion, messages, log };
 }
