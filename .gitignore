@@ -14,3 +14,8 @@ coverage/
 # Editor
 .vscode/
 .DS_Store
+
+# Falls Git .env bereits getrackt hat bevor du sie in .gitignore eingetragen hast. Dann hilft:
+# git rm --cached .env
+# git rm --cached .env.production
+# git commit -m "remove .env files from tracking"

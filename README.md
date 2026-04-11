@@ -14,3 +14,8 @@ Ein CI/CD-Lernprojekt mit vollständiger automatisierter Pipeline.
 - ✅ Vite-Build mit Asset-Optimierung
 - ✅ Automatisches Deployment auf GitHub Pages
 - ✅ Sicherheits-Scans mit CodeQL und Dependabot
+
+## Häufig benutzt
+
+- Lokalen Branch löschen: git branch -d branchname
+- Remote-Branch löschen: git push origin --delete branchname
